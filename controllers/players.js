@@ -1,5 +1,13 @@
 const Players = require('../models/players.js');
 
+exports.getPlayer = (req, res, next) => {
+  res.render('views/PlayerStatsView', {
+    pageTitle: 'Add Player',
+    path: '/views/add-product',
+    editing: false
+  });
+};
+
 exports.postAddPlayer = (req, res, next) => {
     const name = req.body.name;
     const surname = req.body.surname;
@@ -22,6 +30,12 @@ exports.postAddPlayer = (req, res, next) => {
         console.log(err);
       });
   };
+
+  /*exports.getPlayer = (req, res, next) => {
+    Players.findAll(products => {
+      plyrs: 
+    })
+  }*/
   
   /*exports.getEditPlayer = (req, res, next) => {
     const editMode = req.query.edit;
